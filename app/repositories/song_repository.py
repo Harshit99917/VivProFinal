@@ -1,3 +1,4 @@
+import json
 from typing import List, Optional
 from app.models.song_model import Song
 
@@ -18,5 +19,37 @@ class SongRepository:
         song = self.find_by_title(title)
         if song:
             song.rating = rating
+            self._save_to_file()
             return True
         return False
+
+    def _save_to_file(self):
+        data = {
+            "id": {},
+            "title": {},
+            "danceability": {},
+            "energy": {},
+            "mode": {},
+            "acousticness": {},
+            "tempo": {},
+            "duration_ms": {},
+            "num_sections": {},
+            "num_segments": {},
+            "rating": {}
+        }
+
+        for i, song in enumerate(self.songs):
+            data["id"][str(i)] = song.id
+            data["title"][str(i)] = song.title
+            data["danceability"][str(i)] = song.danceability
+            data["energy"][str(i)] = song.energy
+            data["mode"][str(i)] = song.mode
+            data["acousticness"][str(i)] = song.acousticness
+            data["tempo"][str(i)] = song.tempo
+            data["duration_ms"][str(i)] = song.duration_ms
+            data["num_sections"][str(i)] = song.num_sections
+            data["num_segments"][str(i)] = song.num_segments
+            data["rating"][str(i)] = song.rating if song.rating is not None else 0
+
+        with open("app/data/songs.json", "w") as f:
+            json.dump(data, f, indent=4)
