@@ -24,16 +24,4 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
 
-# Jupyter Notebook Checkpoints
-.ipynb_checkpoints/
-
-# Local SQLite DBs
-*.sqlite3
-*.db
-
-# VS Code debugging
-.vscode/
-venv/
