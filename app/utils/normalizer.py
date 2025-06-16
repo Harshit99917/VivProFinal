@@ -19,6 +19,7 @@ def normalize_songs():
             duration_ms=int(data["duration_ms"][str(i)]),
             num_sections=int(data["num_sections"][str(i)]),
             num_segments=int(data["num_segments"][str(i)]),
+            rating=int(data["rating"].get(str(i), 0))  # ✅ Safely get rating or default to 0
         )
         songs.append(song)
     return songs
