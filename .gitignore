@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.env.*  # Optional for multiple env files
+
+# Test & coverage reports
+.coverage
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+htmlcov/
+
+# IDE / Editor settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Local SQLite DBs
+*.sqlite3
+*.db
+
+# VS Code debugging
+.vscode/
